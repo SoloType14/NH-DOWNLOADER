@@ -15,7 +15,7 @@ def main():
         os.chdir(os.path.join(os.getcwd(), folder))
 
         r= requests.get(url)
-        soup = BeautifulSoup(r.content, 'html5lib')
+        soup = BeautifulSoup(r.content, 'html.parser')
         soup.prettify()
 
         imgCount = soup.find_all('div', 'thumb-container')
